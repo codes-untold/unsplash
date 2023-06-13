@@ -33,4 +33,12 @@ void main() {
     // Assert
     expect(result?.first, equals(PhotoDataTestResponse.photoData.first));
   });
+
+  test('Test internetCheck function', () async {
+    // Simulate a successful InternetAddress lookup
+    final result = await ApiService.internetCheck();
+
+    // Verify that the result is true
+    expect(result, true);
+  });
 }

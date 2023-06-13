@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:unsplash/blocs/photo_data_cubit.dart';
@@ -41,7 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: const Key('Scaffold'),
       appBar: AppBar(
+        key: const Key('AppBar'),
         backgroundColor: const Color(0XFF17181B),
       ),
       backgroundColor: const Color(0XFF262932),

@@ -26,4 +26,30 @@ void main() {
 
     expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
+
+  testWidgets('HomeScreen displays AppBar', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      BlocProvider<PhotoDataStateCubit>.value(
+        value: PhotoDataStateCubit(),
+        child: const MaterialApp(
+          home: HomeScreen(),
+        ),
+      ),
+    );
+    final appBarFinder = find.byKey(const Key('AppBar'));
+    expect(appBarFinder, findsOneWidget);
+  });
+
+  testWidgets('HomeScreen displays Scaffold', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      BlocProvider<PhotoDataStateCubit>.value(
+        value: PhotoDataStateCubit(),
+        child: const MaterialApp(
+          home: HomeScreen(),
+        ),
+      ),
+    );
+    final appBarFinder = find.byKey(const Key('Scaffold'));
+    expect(appBarFinder, findsOneWidget);
+  });
 }
