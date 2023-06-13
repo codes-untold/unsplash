@@ -6,6 +6,7 @@ import 'package:unsplash/networking/api_service.dart';
 class PhotoDataStateCubit extends Cubit<PhotoDataState> {
   PhotoDataStateCubit() : super(PhotoDataInitialState());
 
+  //calls the api service fetch image function and changes state accordingly
   Future<void> getPhotos(String page) async {
     final currentState = state;
     if (currentState is PhotoDataLoaded) {
